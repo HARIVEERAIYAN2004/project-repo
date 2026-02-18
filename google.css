@@ -1,0 +1,221 @@
+/* =========================
+   1. RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   2. ROOT VARIABLES (Green Palette)
+========================= */
+:root {
+    --green-main: #34a853;
+    --green-light: #e6f4ea;
+    --green-soft: #f1fbf4;
+    --green-dark: #1e7c3a;
+    --text-dark: #202124;
+    --border-gray: #dadce0;
+    --font-main: 'Roboto', sans-serif;
+}
+
+/* =========================
+   3. BODY LAYOUT
+========================= */
+body {
+    font-family: var(--font-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--green-soft);
+    color: var(--text-dark);
+}
+
+/* =========================
+   4. HEADER
+========================= */
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 30px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--text-dark);
+    position: relative;
+}
+
+/* Animated underline */
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--green-main);
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+header img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* =========================
+   5. MAIN SECTION
+========================= */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    text-align: center;
+}
+
+.logo img {
+    width: 260px;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   6. SEARCH BOX
+========================= */
+.search-box {
+    position: relative;
+    display: inline-block;
+    width: 500px;
+    max-width: 90%;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border-radius: 40px;
+    border: 1px solid #dfe1e5;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.search-box input:focus {
+    border-color: var(--green-main);
+    box-shadow: 0 0 10px rgba(52, 168, 83, 0.3);
+}
+
+/* Search icon */
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--green-main);
+}
+
+/* =========================
+   7. BUTTONS
+========================= */
+.buttons {
+    margin-top: 25px;
+}
+
+.buttons button {
+    background-color: white;
+    border: 1px solid var(--green-main);
+    padding: 10px 25px;
+    font-size: 14px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: var(--green-main);
+    color: white;
+}
+
+/* =========================
+   8. FOOTER
+========================= */
+footer {
+    background-color: var(--green-light);
+}
+
+.footer-country {
+    padding: 15px 30px;
+    border-top: 1px solid var(--border-gray);
+    font-size: 14px;
+    color: #555;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-top: 1px solid var(--border-gray);
+    flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #555;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   9. RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .logo img {
+        width: 200px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        justify-content: center;
+    }
+}

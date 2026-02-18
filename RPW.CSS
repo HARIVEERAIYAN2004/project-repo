@@ -1,0 +1,788 @@
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #1f2933;
+  line-height: 1.6;
+}
+
+/* ===============================
+   FADE-UP ANIMATION
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.5s;
+}
+
+.delay-3 {
+  animation-delay: 0.8s;
+}
+
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #1f2933;
+  line-height: 1.6;
+}
+
+/* ===============================
+   FADE-UP ANIMATION (FIXED: SINGLE DEFINITION)
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.5s; }
+.delay-3 { animation-delay: 0.8s; }
+
+/* ===============================
+   HERO SECTION
+================================ */
+
+.hero {
+  width: 100%;
+  height: auto;
+
+  padding: clamp(90px, 14vh, 150px) 20px;
+
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #046c4e,
+    #2f9e44,
+    #a7f3d0
+  );
+}
+
+/* ===============================
+   HERO CONTAINER (FIXED GAP)
+================================ */
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 🔥 important fix */
+  gap: 36px; /* controlled premium spacing */
+}
+
+/* ===============================
+   HERO CONTENT
+================================ */
+
+.hero-content {
+  max-width: 600px;
+  color: #ffffff;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.hero-content h2 {
+  font-size: 1.8rem;
+  color: #d1fae5;
+  margin-bottom: 22px;
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 36px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ===============================
+   HERO BUTTONS
+================================ */
+
+.hero-btns {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Base Button */
+.btn {
+  text-decoration: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+/* Primary */
+.primary-btn {
+  background: linear-gradient(135deg, #059669, #22c55e);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Secondary */
+.secondary-btn {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+}
+
+.secondary-btn:hover {
+  background-color: #d1fae5;
+  color: #065f46;
+  border-color: #d1fae5;
+  transform: translateY(-3px);
+}
+
+/* Tertiary */
+.tertiary-btn {
+  border: 2px solid #d1fae5;
+  color: #d1fae5;
+  background: transparent;
+}
+
+.tertiary-btn:hover {
+  background-color: #a7f3d0;
+  color: #064e3b;
+  border-color: #a7f3d0;
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   HERO IMAGE
+================================ */
+
+.hero-image {
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 34px 80px rgba(0, 0, 0, 0.55);
+}
+
+/* ===============================
+   RESPONSIVE FIXES
+================================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero {
+    padding: 100px 20px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 46px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-image img {
+    width: 220px;
+  }
+}
+
+/* ===============================
+   PROJECTS SECTION
+================================ */
+.projects {
+  padding: 100px 20px;
+  background-color: #ffffff;
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 12px;
+  color: #064e3b;
+  animation: fadeUp 3s ease forwards;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 60px;
+  color: #4b5563;
+  animation: fadeUp 3s ease forwards;
+  font-size: 1.4rem;
+}
+
+/* ===============================
+   ABOUT, SKILLS, CONTACT
+   (UNCHANGED — ONLY KEYFRAME FIX APPLIED)
+================================ */
+/* Everything below remains exactly as you wrote it */
+
+/* ===============================
+   PROJECT GRID
+================================ */
+.projects-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* ===============================
+   PROJECT CARD
+================================ */
+.project-item {
+  background-color: #f0efe0f1; /* soft mint background */
+  padding: 30px 25px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  /* fade-up animation */
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+/* Hover Effect */
+.project-item:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.12),
+    0 0 0 2px rgba(254, 127, 45, 0.25); /* pumpkin glow */
+}
+
+/* Green accent line at top of card */
+.project-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    #059669,
+    #22c55e
+  );
+  border-radius: 18px 18px 0 0;
+}
+
+/* ===============================
+   PROJECT CONTENT
+================================ */
+.project-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #065f46;
+  position: relative;
+  display: inline-block; /* underline width matches heading text */
+}
+/* Pumpkin underline with gradient and slow appear animation */
+.project-item h3::after {
+  content: "";
+  display: block;
+  width: 0; /* start hidden */
+  height: 3px;
+  margin-top: 6px;
+  background: linear-gradient(
+    90deg,
+    #ffc499,  /* light pumpkin start */
+    #fe7f2d,  /* normal pumpkin middle */
+    #c75c1f   /* darker pumpkin end */
+  );
+  border-radius: 2px;
+  animation: underlineAppear 1s ease forwards;
+  animation-delay: 0.6s; /* delay after card fade-in */
+}
+
+@keyframes underlineAppear {
+  from { width: 0; }
+  to { width: 56px; } /* fixed width for underline */
+}
+
+
+.project-item p {
+  font-size: 0.95rem;
+  color: #065f46;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* ===============================
+   PROJECT BUTTON
+================================ */
+.project-btn {
+  display: inline-block;
+  margin-top: auto; /* aligns buttons at bottom */
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #059669,
+    #22c55e
+  );
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-up animation delays for each card */
+.projects .project-item:nth-child(1) { animation-delay: 0.2s; }
+.projects .project-item:nth-child(2) { animation-delay: 0.4s; }
+.projects .project-item:nth-child(3) { animation-delay: 0.6s; }
+.projects .project-item:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 480px) {
+  .projects h2 {
+    font-size: 2rem;
+  }
+
+  .project-item {
+    padding: 25px 20px;
+  }
+}
+
+/* ===============================
+   ABOUT SECTION (FULL WIDTH)
+================================ */
+
+.about {
+  padding: 120px 20px;
+  background-color: #ecfdf5; /* 🌱 soft mint */
+}
+
+/* ===============================
+   ABOUT CONTAINER
+================================ */
+
+.about-container {
+  max-width: 1250px;   /* was 1100px */
+  margin: 0 auto;
+}
+
+/* ===============================
+   ABOUT TITLE
+================================ */
+
+.about-title {
+  text-align: center;
+  font-size: 2.6rem;
+  color: #064e3b;
+  margin-bottom: 70px;
+  animation: fadeUp 3s ease forwards;
+}
+
+/* ===============================
+   ABOUT CONTENT ROW
+================================ */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 28px;
+  margin-bottom: 90px;
+  animation: fadeUp 3s ease forwards;
+}
+
+/* ===============================
+   ABOUT TEXT CARDS
+================================ */
+
+.about-text {
+  background-color: #ffffff;
+  padding: 42px 36px;     /* ⬆ more inner space */
+  min-height: 220px;      /* ⬆ bigger card height */
+  border-radius: 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+
+.about-text p {
+  font-size: 1.05rem;   /* was 1rem */
+  line-height: 1.8;
+  color: #140303;
+}
+
+
+/* ===============================
+   DIVIDER (ANIMATED)
+================================ */
+
+.divider {
+  width: 5px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    #10b981,
+    transparent
+  );
+  border-radius: 4px;
+
+  /* animation */
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: dividerGrow 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* Divider animation */
+@keyframes dividerGrow {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* ===============================
+   SKILLS SECTION
+================================ */
+
+.skills {
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 2rem;
+  color: #065f46;
+  margin-bottom: 35px;
+  animation: fadeUp 3s ease forwards;
+}
+
+/* ===============================
+   SKILLS GRID (2 ROW × 3 COL)
+================================ */
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 540px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  animation: fadeUp 2s ease forwards;
+}
+
+/* ===============================
+   SKILL PILLS
+================================ */
+
+.skills-list li {
+  padding: 12px 0;
+  background: linear-gradient(
+    135deg,
+     hwb(0 62% 11%) 0%,   /* very light red */
+    #eb3f3f 50%,  /* soft red */
+    #cf0404 100%  /* main red */
+  );
+  color: #f7f7f7;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 0 0 rgba(248, 113, 113, 0.0);
+  transition: all 0.3s ease;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .about-text {
+    margin-bottom: 22px;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .skills-title {
+    font-size: 1.6rem;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   CONTACT SECTION (DARK PREMIUM)
+================================ */
+
+.contact {
+  padding: 120px 20px;
+  background: linear-gradient(
+    180deg,
+    #020617 0%,   /* deep midnight */
+    #020617 60%,
+    #022c22 100%  /* subtle emerald base */
+  );
+  text-align: center;
+}
+
+/* ===============================
+   CONTACT TITLE
+================================ */
+
+.contact h2 {
+  font-size: 2.6rem;
+  color: #ecfdf5; /* soft mint white */
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  animation: fadeUp 3s ease forwards;
+}
+
+/* ===============================
+   CONTACT INTRO
+================================ */
+
+.contact-intro {
+  max-width: 640px;
+  margin: 0 auto 70px;
+  font-size: 1.05rem;
+  color: #9c9c9c; /* soft gray */
+  line-height: 1.7;
+  animation: fadeUp 3s ease forwards;
+}
+
+/* ===============================
+   CONTACT WRAPPER
+================================ */
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  animation: fadeUp 3s ease forwards;
+}
+
+/* ===============================
+   CONTACT INFO CARD
+================================ */
+
+.contact-info {
+  background: linear-gradient(
+    145deg,
+    #020617,
+    #020617
+  );
+  padding: 42px 48px;
+  border-radius: 22px;
+  max-width: 540px;
+  width: 100%;
+  text-align: left;
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(16, 185, 129, 0.15); /* emerald outline */
+}
+
+/* ===============================
+   CONTACT TEXT
+================================ */
+
+.contact-info p {
+  font-size: 1rem;
+  color: #e5e7eb;
+  margin-bottom: 26px;
+  line-height: 1.6;
+}
+
+/* ===============================
+   EMAIL LINK
+================================ */
+
+.contact-info a {
+  color: #10b981; /* emerald */
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Underline glow on hover */
+.contact-info a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #10b981,
+    #34d399
+  );
+  transition: width 0.3s ease;
+}
+
+.contact-info a:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+  .contact h2 {
+    font-size: 2.1rem;
+  }
+
+  .contact-info {
+    padding: 34px 26px;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+  }
+}
+

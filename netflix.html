@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    <!-- =========================
+         BASIC META SETTINGS
+    ========================== -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================
+         PAGE TITLE
+    ========================== -->
+        <title>Netflix landing page</title>
+
+    <!-- =========================
+         EXTERNAL CSS FILE
+    ========================== --> 
+        <link rel="stylesheet" href="netflix.css">
+    </head>
+
+        
+    <!-- =========================
+         BODY SECTION
+    ========================== -->
+    <body>
+
+        <!--=== Header section ===-->
+         <header class="main-header">
+            <div class="header-container">
+
+            <!--logo leftside-->
+            <div class="logo">
+                <a href="#">
+            <img src="igm1/netflix.png" alt="the logo">
+            </a>
+            </div>
+
+            <!-- Right Side Actions -->
+            <div class="header-actions">
+
+                <!-- Language Selector -->
+                <select  id="header-language" aria-label="Choose language">
+                     <option value="en">English</option>
+                     <option value="ta">Tamil</option>
+                     <option value="ml">Malayalam</option>
+                     <option value="kn">Kannada</option>
+                     <option value="te">Telugu</option>
+                     <option value="hi">Hindi</option>
+                </select>
+            
+                 <!-- Sign In Button -->
+                <button type="button" class="btn-signin">Sign in</button>
+            </div>
+            </div>
+         </header>
+
+         <!--=== hero section ===-->
+         <section class="hero">
+            
+              <!-- Dark Overlay -->
+               <div class="overlay"></div>
+
+             <!-- Hero Content -->  
+              <div class="hero-content">
+
+             <h1>Unlimited movies, TV shows and more</h1>
+             <h3>Watch anywhere. Cancel anytime.</h3>
+             <p>Ready to watch? Enter your email to create or restart your membership.</p>
+             
+             
+         <!-- Email Form -->
+             <div class="email-box">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="button" class="btn-get-started">Get Started</button>
+             </div>      
+           </div> 
+         </section>
+
+         <!--=== trending section ===-->
+         <section class="trending">
+
+            <!--trending container-->
+            <div class="container">
+                 <h2>Trending Now</h2>
+
+                 <!--trending row-->
+                 <div class="trending-row">
+
+                      <!--movie cards-->
+                  <div class="movie-card">
+                  <img src="igm1/m1p.jpg" alt="movie poster 1">
+                  <span class="rank">1</span>
+                 </div>
+
+                   <div class="movie-card">
+                  <img src="igm1/m2v.png" alt="movie poster 2">
+                  <span class="rank">2</span>
+                 </div>
+
+                   <div class="movie-card">
+                  <img src="igm1/m3v.webp" alt="movie poster 3">
+                  <span class="rank">3</span>
+                 </div>
+
+                   <div class="movie-card">
+                  <img src="igm1/m4v.webp" alt="movie poster 4">
+                  <span class="rank">4</span>
+                 </div>
+
+                   <div class="movie-card">
+                  <img src="igm1/m5v.webp" alt="movie poster 5">
+                  <span class="rank">5</span>
+                 </div>
+
+                 <div class="movie-card">
+                  <img src="igm1/m6v.jpg" alt="movie poster 6">
+                  <span class="rank">6</span>
+                 </div>
+                 </div>
+            </div>
+        </section>
+               
+         <!--=== features section ===-->
+                <section class="features">
+
+                    <!--features-container-->
+                    <div class="features-container">
+
+                        <h2>More reasons to join</h2>
+
+                         <!--features-grid-->
+                        <div class="features-grid">
+
+                        <!--feature-card1-->
+                            <div class="feature-card">
+                              <div class="feature-content">
+                                <h3>Enjoy on your TV</h3>
+                                <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                            </div>
+                            <div class="feature-icon">
+                                <img src="igm1/imac.png" alt="icon 1">
+                            </div>
+                            </div>
+
+                               <!-- Feature Card 2 -->
+                            <div class="feature-card">
+                                <div class="feature-content">
+                                <h3>Download your shows to watch offline</h3>
+                                <p>Save your favourites easily and always have something to watch.</p>
+                            </div>
+                            <div class="feature-icon">
+                                <img src="igm1/download-file.png" alt="icon 2">
+                            </div>
+                            </div>
+                               
+                            <!-- Feature Card 3 -->
+                            <div class="feature-card">
+                            <div class="feature-content">
+                                <h3>Watch everywhere</h3>
+                                <p>Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</p>
+                            </div>
+                            <div class="feature-icon">
+                                <img src="igm1/watching.png" alt="icon 3">
+                            </div>
+                            </div>
+
+                              <!-- Feature Card 4 -->
+                            <div class="feature-card">
+                            <div class="feature-content"> 
+                                <h3>Create profiles for kids</h3>
+                                <p>Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</p>
+                            </div>
+                            <div class="feature-icon">
+                                <img src="igm1/child.png" alt="icon 4">
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+          <!-- ================= FAQ SECTION ================= -->
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-container">
+
+        <!-- ITEM 1 -->
+        <div class="faq-item">
+            <input type="checkbox" id="faq1">
+            <label for="faq1" class="faq-question">
+                What is Netflix?
+                <span class="icon">+</span>
+            </label>
+            <div class="faq-answer">
+                <p>
+                    Netflix is a streaming service that offers a wide variety of award-winning TV shows,
+                    movies, anime, documentaries and more on thousands of internet-connected devices.
+                </p>
+            </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="faq-item">
+            <input type="checkbox" id="faq2">
+            <label for="faq2" class="faq-question">
+                How much does Netflix cost?
+                <span class="icon">+</span>
+            </label>
+            <div class="faq-answer">
+                <p>
+                    Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device
+                    for one fixed monthly fee. Plans range depending on your needs.
+                </p>
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="faq-item">
+            <input type="checkbox" id="faq3">
+            <label for="faq3" class="faq-question">
+                Where can I watch?
+                <span class="icon">+</span>
+            </label>
+            <div class="faq-answer">
+                <p>
+                    Watch anywhere, anytime. Sign in with your Netflix account to watch instantly
+                    on the web at netflix.com from your personal computer or on any device.
+                </p>
+            </div>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="faq-item">
+            <input type="checkbox" id="faq4">
+            <label for="faq4" class="faq-question">
+                How do I cancel?
+                <span class="icon">+</span>
+            </label>
+            <div class="faq-answer">
+                <p>
+                    Netflix is flexible. There are no contracts and no commitments.
+                    You can easily cancel your account online anytime.
+                </p>
+            </div>
+        </div>
+
+        <!-- ITEM 5 -->
+        <div class="faq-item">
+            <input type="checkbox" id="faq5">
+            <label for="faq5" class="faq-question">
+                Is Netflix good for kids?
+                <span class="icon">+</span>
+            </label>
+            <div class="faq-answer">
+                <p>
+                    The Netflix Kids experience is included in your membership to give parents control
+                    while kids enjoy family-friendly TV shows and movies.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+                <!-- === Call To Action Section === -->
+                <section class="cta">
+
+                    <!--cta-container-->
+                    <div class="cta-container">
+                        <p class="cta-text">Ready to watch? Enter your email to create or restart your membership.</p>
+
+                        <!--cta-form-->
+                        <div class="cta-form">
+                            <input type="email" placeholder="Email address" required>
+                            <button type="button">Get Started</button>
+                        </div>
+                    </div>
+                </section>
+
+           <!-- =========================
+              FOOTER
+            ========================== -->
+             <footer class="footer">
+
+              <div class="footer-container">
+
+                   <!-- Contact Text -->
+                     <p class="footer-contact">Questions? Call 000-800-919-1694</p>
+
+                   <!-- Footer Links -->
+                      <div class="footer-links">
+
+                      <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Speed Test</a></li>
+                      </ul>
+
+                     <ul>
+                      <li><a href="#">Help Centre</a></li>
+                      <li><a href="#">Jobs</a></li>
+                      <li><a href="#">Cookie Preferences</a></li>
+                      <li><a href="#">Legal Notices</a></li>
+                     </ul>
+
+                     <ul>
+                       <li><a href="#">Account</a></li>
+                       <li><a href="#">Ways to Watch</a></li>
+                       <li><a href="#">Corporate Information</a></li>
+                       <li><a href="#">Only on Netflix</a></li>
+                     </ul>
+
+                     <ul>
+                      <li><a href="#">Media Centre</a></li>
+                      <li><a href="#">Terms of Use</a></li>
+                      <li><a href="#">Contact Us</a></li>
+                     </ul>
+
+                 </div>
+
+              <!-- Language Selector -->
+                <div class="footer-language">
+                  <select id="footer-language" aria-label="Choose language">
+                    <option value="en">English</option>
+                    <option value="ta">Tamil</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="kn">Kannada</option>
+                    <option value="te">Telugu</option>
+                    <option value="hi">Hindi</option>
+                
+                  </select>
+                </div>
+
+               <!-- Copyright -->
+                <p class="footer-copy">Netflix Clone © 2026</p>
+              </div>
+            </footer>
+         </body>
+</html>

@@ -1,0 +1,340 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+/* Remove default spacing & improve box model */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Color Variables (Signature Green Theme) */
+:root {
+    --green-main: #1db954;      /* Primary brand green */
+    --green-dark: #15803d;      /* Dark green for hover */
+    --green-light: #d1fae5;     /* Light green background */
+    --bg-light: #f4f6f9;        /* Dashboard background */
+    --card-bg: #ffffff;         /* Card background */
+    --text-dark: #1f2937;       /* Main text color */
+    --text-light: #6b7280;      /* Secondary text */
+}
+
+/* Base Body Styling */
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* Remove default list styles */
+ul {
+    list-style: none;
+}
+
+/* Remove link underline */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;                     /* Fixed sidebar width */
+    background-color: var(--green-main);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar Title */
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Navigation List */
+.sidebar nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Navigation Links */
+.sidebar nav ul li a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+/* Hover Effect */
+.sidebar nav ul li a:hover {
+    background-color: var(--green-dark);
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard {
+    display: flex;          /* Makes sidebar + main sit side-by-side */
+    min-height: 100vh;      /* Full screen height */
+}
+
+/* Main Content Area */
+main {
+    flex: 1;                /* Take remaining space */
+    padding: 20px;
+    background-color: var(--bg-light);
+}
+
+/* =========================
+   TOP HEADER
+========================= */
+
+.top-bar {
+    background-color: var(--card-bg);
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Heading */
+.top-bar h1 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+/* Sub Text */
+.top-bar p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* =========================
+   CARDS SECTION
+========================= */
+
+.card-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Individual Card */
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Title */
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+/* Card Number */
+.card p {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--green-main);
+}
+
+/* =========================
+   REPORT SECTION
+========================= */
+.report-section {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.report-section h2 {
+    margin-bottom: 20px;
+    color: var(--green-main);
+}
+
+/* =========================
+   MODERN SAAS TABLE
+========================= */
+
+.report-section {
+    margin-top: 30px;
+}
+
+/* Main Table */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 14px;   /* space between rows */
+}
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+thead th {
+    background-color: rgb(0, 102, 255);
+    color: white;
+    padding: 18px 30px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Column Widths */
+thead th:nth-child(1),
+tbody td:nth-child(1) {
+    width: 45%;
+}
+
+thead th:nth-child(2),
+tbody td:nth-child(2) {
+    width: 30%;
+}
+
+thead th:nth-child(3),
+tbody td:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   FLOATING ROW STYLE
+========================= */
+
+tbody tr {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+tbody td {
+    padding: 20px 30px;
+}
+
+/* Rounded corners for floating row */
+tbody tr td:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+tbody tr td:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+td.status {
+    display: flex;              /* make cell flex */
+    justify-content: center;    /* horizontal center */
+    align-items: center;        /* vertical center */
+}
+
+/* =========================
+   FIX TABLE CELL SPACING
+========================= */
+
+tbody td {
+    padding: 22px 30px;   /* More vertical breathing room */
+}
+
+/* Status column cell */
+td.status {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* =========================
+   STATUS BADGE
+========================= */
+
+.status {
+    display: inline-flex;     /* Prevent full width stretch */
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 24px;       /* Balanced padding */
+    border-radius: 50px;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    white-space: nowrap;      /* Prevent text wrap */
+}
+
+/* Completed */
+.status.completed {
+    color: var(--green-main);
+    background-color: rgba(29,185,84,0.15);
+}
+
+/* In Progress */
+.status.pending {
+    color: orange;
+    background-color: rgba(255,165,0,0.15);
+}
+
+/* Cancelled */
+.status.cancelled {
+    color: red;
+    background-color: rgba(255,0,0,0.15);
+}
+
+/* =========================
+   TABLE ROW ANIMATION
+========================= */
+
+/* Initial state */
+tbody tr {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeSlideUp 0.6s ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay each row slightly */
+tbody tr:nth-child(1) { animation-delay: 0.1s; }
+tbody tr:nth-child(2) { animation-delay: 0.2s; }
+tbody tr:nth-child(3) { animation-delay: 0.3s; }
+tbody tr:nth-child(4) { animation-delay: 0.4s; }
+tbody tr:nth-child(5) { animation-delay: 0.5s; }

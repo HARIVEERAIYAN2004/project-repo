@@ -1,0 +1,592 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+/* =========================
+   HEADER SECTION
+========================= */
+
+.main-header {
+    position: absolute;      /* stays on top of hero */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;  /* logo left, actions right */
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    width: 150px;
+}
+
+/* Right Side */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Language Select */
+#header-language {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+
+/* Sign In Button */
+.btn-signin {
+    background-color: #16a34a;  /* green */
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Hover Effect */
+.btn-signin:hover {
+    background-color: #15803d;  /* darker green */
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("igm1/bg.jpg") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.email-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.email-box input {
+    width: 300px;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-get-started {
+    background-color: #16a34a;   /* green */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-get-started:hover {
+    background-color: #15803d;
+}
+
+/* ===============================
+   TRENDING SECTION
+================================ */
+
+.trending {
+    background-color: #000;
+    padding: 70px 60px;
+    text-align: center;   /* centers the heading */
+}
+
+.trending h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+/* Movie Row */
+.trending-row {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+}
+
+/* Hide Scrollbar */
+.trending-row::-webkit-scrollbar {
+    display: none;
+}
+
+/* Movie Card */
+.movie-card {
+    position: relative;
+    min-width: 200px;
+    height: 300px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Poster Image */
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Hover Effect */
+.movie-card:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Rank Number with Green Glow */
+.rank {
+    position: absolute;
+    bottom: -20px;
+    left: -15px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #008832;
+    line-height: 1;
+    transition: 0.4s ease;
+    text-shadow: 
+        0 0 5px #ffffff,
+        0 0 10px #bdffd5,
+        0 0 20px #53ff92,
+        0 0 40px #00f75a;
+}
+
+
+/* Rank Glow on Hover */
+.movie-card:hover .rank {
+    transform: scale(1.2);
+    text-shadow: 
+        0 0 15px #ffffff,
+        0 0 30px #a7ffc7,
+        0 0 60px #3eff85,
+        0 0 100px #00ff5e;
+}
+
+/* ===============================
+   FEATURES SECTION
+================================ */
+
+.features {
+    background: #000;
+    padding: 80px 60px;
+    text-align: center; /* Center headline */
+}
+
+/* Center Headline */
+.features h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+/* 4 BOX GRID */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the whole grid */
+}
+
+/* Individual Card */
+.feature-card {
+    position: relative;
+    background: linear-gradient(145deg, #1f1c2c, #2a0845);
+    padding: 30px 25px;
+    border-radius: 18px;
+    color: #fff;
+    text-align: left;
+    min-height: 230px;
+    transition: 0.3s ease;
+}
+
+/* Title */
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Text */
+.feature-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Icon bottom-right */
+.feature-icon img {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+/* Hover */
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(128, 0, 255, 0.4);
+}
+
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===============================
+   FAQ SECTION (PURE CSS VERSION)
+================================ */
+
+.faq {
+    background: #000;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 2.3rem;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+/* Center container */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Each item spacing */
+.faq-item {
+    margin-bottom: 15px;
+}
+
+/* Hide checkbox */
+.faq-item input {
+    display: none;
+}
+
+/* Question box */
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #1a1a1a;
+    color: #fff;
+    padding: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    border-radius: 4px;
+}
+
+/* Hover effect */
+.faq-question:hover {
+    background: #111;
+    box-shadow: 0 0 15px #00ff88;
+}
+
+/* Plus icon */
+.icon {
+    font-size: 2rem;
+    transition: 0.3s ease;
+}
+
+/* Answer */
+.faq-answer {
+    background: #1a1a1a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    text-align: left;
+    border-radius: 0 0 4px 4px;
+}
+
+.faq-answer p {
+    padding: 20px 25px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* OPEN STATE */
+.faq-item input:checked ~ .faq-answer {
+    max-height: 500px;
+}
+
+/* Rotate + */
+.faq-item input:checked + .faq-question .icon {
+    transform: rotate(45deg);
+    color: #00ff88;
+}
+
+/* ===============================
+   CTA SECTION
+================================ */
+
+.cta {
+    background: #000;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta h2 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/* Form Layout */
+.cta-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Email Input */
+.cta-form input {
+    padding: 18px;
+    width: 400px;
+    max-width: 100%;
+    font-size: 1rem;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Input focus */
+.cta-form input:focus {
+    border: 1px solid #00ff88;
+}
+
+/* Button */
+.cta-form button {
+    padding: 18px 25px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    background: #00cc66;
+    color: #000;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+/* Button Hover */
+.cta-form button:hover {
+    background: #00ff88;
+    box-shadow: 0 0 15px #00ff88;
+}
+
+@media (max-width: 600px) {
+    .cta-form {
+        flex-direction: column;
+    }
+
+    .cta-form input {
+        width: 100%;
+    }
+
+    .cta-form button {
+        width: 100%;
+    }
+}
+
+/* ===============================
+   PREMIUM FOOTER
+================================ */
+
+.footer {
+    background: #000;
+    padding: 70px 20px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Contact text */
+.footer-contact {
+    margin-bottom: 30px;
+}
+
+/* Links grid */
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #777;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* Green hover */
+.footer-links a:hover {
+    color: #00ff88;
+    text-decoration: underline;
+}
+
+/* Language dropdown */
+.footer-language select {
+    padding: 10px 20px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.footer-language select:focus {
+    border-color: #00ff88;
+    outline: none;
+}
+
+/* Country text */
+.footer-country {
+    color: #555;
+    margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+}

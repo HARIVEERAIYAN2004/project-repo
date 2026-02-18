@@ -1,0 +1,134 @@
+/* =========================
+   CSS RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* =========================
+   ROOT COLORS (IMPROVED DARK THEME)
+========================= */
+:root {
+  --green-main: #22c55e;
+  --green-dark: #16a34a;
+
+  --bg-dark: #0b1220;        /* Page background (dark) */
+  --card-bg: #1a2236;       /* Card background (lighter) */
+
+  --text-light: #f1f5f9;
+  --text-muted: #9aa4b2;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 40px 20px;
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+.gallery-section {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.gallery-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-title {
+  font-size: 2.5rem;
+  color: var(--green-main);
+  margin-bottom: 10px;
+}
+
+.gallery-description {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* =========================
+   IMAGE GRID
+========================= */
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* =========================
+   IMAGE CARD
+========================= */
+.image-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.4);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.image-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   FIGCAPTION
+========================= */
+.image-caption {
+  padding: 16px 18px;
+}
+
+/* Title */
+.image-caption h3 {
+  font-size: 1.2rem;
+  color: var(--green-main);
+  margin-bottom: 6px;
+}
+
+/* Credit */
+.image-caption .credit {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.image-caption p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+/* =========================
+   RESPONSIVE TWEAKS
+========================= */
+@media (max-width: 600px) {
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .image-card img {
+    height: 200px;
+  }
+}

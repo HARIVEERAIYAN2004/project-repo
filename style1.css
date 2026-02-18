@@ -1,0 +1,338 @@
+/* =====================
+   RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =====================
+   ROOT VARIABLES
+===================== */
+:root {
+  --bg-light: linear-gradient(180deg, #e8f5e9 0%, #c8e6c9 45%, #ffffff 100%);
+  --bg-dark: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+
+  --card-light: rgba(255, 255, 255, 0.75);
+  --card-dark: rgba(30, 30, 30, 0.65);
+
+  --text-light: #333;
+  --text-dark: #e0e0e0;
+
+  --accent: #2ecc71;
+}
+
+/* =====================
+   BODY
+===================== */
+body {
+  min-height: 100vh;
+  background: var(--bg-light);
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* =====================
+   GREEN WAVES
+===================== */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  border-radius: 100%;
+  will-change: transform;
+}
+
+body::before {
+  bottom: 0;
+  background: radial-gradient(
+    circle,
+    rgba(46, 204, 113, 0.35) 30%,
+    rgba(46, 204, 113, 0.15) 55%,
+    transparent 70%
+  );
+  animation: waveMove 14s linear infinite;
+}
+
+body::after {
+  bottom: 25px;
+  background: radial-gradient(
+    circle,
+    rgba(39, 174, 96, 0.25) 35%,
+    rgba(39, 174, 96, 0.12) 60%,
+    transparent 75%
+  );
+  animation: waveMove 22s linear infinite reverse;
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =====================
+   CONTAINER (GLASS)
+===================== */
+.container {
+  max-width: 600px;
+  width: 100%;
+  padding: 35px 30px;
+  border-radius: 16px;
+  background: var(--card-light);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+/* Accent bar */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  border-radius: 16px 16px 0 0;
+}
+
+/* =====================
+   HEADER
+===================== */
+header {
+  text-align: center;
+  margin-bottom: 32px;
+  animation: fadeUp 0.8s ease both;
+}
+
+/* Profile image (NO GREEN RING) */
+.profile-wrapper {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-bottom: 14px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.profile-wrapper img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Name */
+header h2 {
+  font-size: 26px;
+}
+
+/* Role */
+header .role {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Tagline */
+header .tagline {
+  font-size: 14px;
+  max-width: 420px;
+  margin: auto;
+  line-height: 1.5;
+}
+
+/* =====================
+   SECTIONS (GLASS)
+===================== */
+section {
+  background: var(--card-light);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  padding: 22px;
+  border-radius: 14px;
+  margin-bottom: 28px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeUp 0.9s ease both;
+}
+
+section h1 {
+  font-size: 22px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 8px;
+}
+
+/* =====================
+   ABOUT
+===================== */
+.about p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.about span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* =====================
+   SKILLS
+===================== */
+.skills ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills li {
+  background: rgba(46, 204, 113, 0.15);
+  color: #1e8449;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================
+   PROJECTS
+===================== */
+.projects ul {
+  list-style: none;
+}
+
+.projects li {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projects li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.projects a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* =====================
+   CONTACT
+===================== */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact a {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.contact a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(46, 204, 113, 0.35);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* =====================
+   ANIMATION
+===================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   DARK MODE
+===================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+
+  .container,
+  section {
+    background: var(--card-dark);
+  }
+
+  section h1 {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .projects li {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 480px) {
+  header h2 {
+    font-size: 22px;
+  }
+
+  section h1 {
+    font-size: 20px;
+  }
+
+  .profile-wrapper img {
+    width: 120px;
+    height: 120px;
+  }
+
+  body::before,
+  body::after {
+    height: 160px;
+  }
+}
